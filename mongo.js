@@ -33,3 +33,5 @@ if (process.argv.length < 4) {
         mongoose.connection.close()
     })
 }
+
+module.exports = mongoose.model('Person', personSchema)
