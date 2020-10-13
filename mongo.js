@@ -1,4 +1,5 @@
 const mongoose = require('mongoose')
+const uniqueValidator = require('mongoose-unique-validator')
 
 const password = process.argv[2]
 
@@ -11,6 +12,7 @@ const personSchema = new mongoose.Schema({
   name: String,
   number: String,
 })
+personSchema.plugin(uniqueValidator)
 
 const Person = mongoose.model('Person', personSchema)
 
